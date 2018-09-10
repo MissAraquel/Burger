@@ -1,10 +1,16 @@
 {{!-- Setup the index.handlebars to have the template that Handlebars can render onto. Create a button in index.handlebars
 that will submit the user input into the database. --}}
-
-<div class="col-md-12">
-    <center>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <center>
+            <h1 class="display-4">Good Burger</h1>
+            <p class="lead">Welcome to Good Burger, home of the Good Burger! Can I take your order?</p>
+        </center>
+    </div>
+</div>
+<div class="row">
         <div class="col-md-4">
-            <h2>Select a burger to consume:</h2>
+            <h3>Select a burger to consume:</h3>
             <div>
                 {{#each burgers}} {{#unless devoured}}
                 <form action="burger/eat/{{id}}" method="POST">
@@ -19,10 +25,8 @@ that will submit the user input into the database. --}}
                 {{/unless}} {{/each}}
             </div>
         </div>
-        <br>
-        <div class="col-md-4"></div>
         <div class="col-md-4">
-            <h2>Burgers consumed:</h2>
+            <h3>Burgers consumed:</h3>
             <div id="burgersEaten">
                 <br>
                 {{#each burgers}} {{#if this.devoured}}
@@ -32,5 +36,4 @@ that will submit the user input into the database. --}}
                 {{/if}} {{/each}}
             </div>
         </div>
-    </center>
 </div>
