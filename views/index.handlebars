@@ -8,32 +8,42 @@ that will submit the user input into the database. --}}
         </center>
     </div>
 </div>
-<div class="row">
-        <div class="col-md-4">
-            <h3>Select a burger to consume:</h3>
-            <div>
-                {{#each burgers}} {{#unless devoured}}
-                <form action="burger/eat/{{id}}" method="POST">
-                    <br>
-                    <div class="input-group">
-                        <li class="form-control">{{id}}. {{burger_name}}</li>
-                        <span class="input-group-btn">
-                            <button class="btn btn-success devour-button" type="submit">DEVOUR</button>
-                        </span>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <center>
+                <h3>Burger's Available:</h3>
+                <ul class="list-group">
+                    {{#each burgers}}
+                      {{#unless devoured}}
+                       {{> burgers/burger-block devoured=true}}
+                      {{/unless}}
+                    {{/each}}
+                </ul>
+            </center>
+        </div>
+        <div class="col-md-6">
+            <center>
+                <form>
+                    <div class="form-group">
+                        <h3>Personalize your Burger!!!</h3>
+                        <label for="burgerForm"></label>
+                        <textarea class="form-control" id="burgerForm" rows="4"></textarea>
                     </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
-                {{/unless}} {{/each}}
-            </div>
+            </center>
         </div>
-        <div class="col-md-4">
-            <h3>Burgers consumed:</h3>
-            <div id="burgersEaten">
-                <br>
-                {{#each burgers}} {{#if this.devoured}}
-                <div class="input-group">
-                    <li class="form-control">{{this.id}}. {{this.burger.name}}</li>
-                </div>
-                {{/if}} {{/each}}
-            </div>
+        <div class="col">
+            <center>
+                <h3>Burger's Sold:</h3>
+                <ul class="list-group">
+                    {{#each burgers}}
+                      {{#if this.devoured}}
+                      {{/if}}
+                    {{/each}}
+                </ul>
+            </center>
         </div>
+    </div>
 </div>
