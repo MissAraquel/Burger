@@ -16,7 +16,7 @@ that will submit the user input into the database. --}}
                         </span>
                     </div>
                 </form>
-                {{/each}} {{/unless}}
+                {{/unless}} {{/each}}
             </div>
         </div>
         <br>
@@ -25,11 +25,11 @@ that will submit the user input into the database. --}}
             <h2>Burgers consumed:</h2>
             <div id="burgersEaten">
                 <br>
-                {{#each burgers}} {{if this.devoured}}
+                {{#each burgers}} {{#if this.devoured}}
                 <div class="input-group">
                     <li class="form-control">{{this.id}}. {{this.burger.name}}</li>
                 </div>
-                {{/each}} {{/if}}
+                {{/if}} {{/each}}
             </div>
         </div>
     </center>
