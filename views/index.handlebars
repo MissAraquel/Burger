@@ -1,10 +1,10 @@
 {{!-- Setup the index.handlebars to have the template that Handlebars can render onto. Create a button in index.handlebars
 that will submit the user input into the database. --}}
-<div class="jumbotron jumbotron-fluid">
+<div style="background:transparent !important" class="jumbotron">
     <div class="container">
         <center>
-            <h1 class="display-4">Good Burger</h1>
-            <p class="lead">Welcome to Good Burger, home of the Good Burger! Can I take your order?</p>
+            <img src="assets/img/Good_Burger_logo.png" alt="logo">
+            <p class="font">"Welcome to Good Burger, home of the Good Burger! Can I take your order?"</p>
         </center>
     </div>
 </div>
@@ -12,7 +12,7 @@ that will submit the user input into the database. --}}
     <div class="row">
         <div class="col">
             <center>
-                <h3>Burger's Available:</h3>
+                <h3 class="font">BURGERS AVAILABLE:</h3>
                 <ul class="list-group">
                     {{#each burgers}}
                       {{#unless devoured}}
@@ -22,21 +22,21 @@ that will submit the user input into the database. --}}
                 </ul>
             </center>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-3">
             <center>
                 <form class="personalize">
                     <div class="form-group">
-                        <h3>Personalize your Burger!!!</h3>
+                        <h3 class="font">PERSONALIZE YOUR BURGER:</h3>
                         <label for="burgerForm"></label>
                         <textarea class="form-control" id="burgerForm" rows="4"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-outline-info btn-sm">Submit</button>
                 </form>
             </center>
         </div>
         <div class="col">
             <center>
-                <h3>Burger's Sold:</h3>
+                <h3 class="font">BURGERS SOLD:</h3>
                 <ul class="list-group">
                     {{#each burgers}}
                       {{#if this.devoured}}
